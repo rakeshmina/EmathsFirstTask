@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head.ejs') %>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="css/LoginForm.css">
+</head>
+
+<body>
+    
+
+    <section id="assignment">
+        <div class="text-center"><h1>Hello <%=  name %>. Your this week's assignment</h1></div>
+        <ol>
+                <% for (let i=1;i<questions.length; i++){ %>
+                    <h2><li><%=  questions[i] %></li></h2>
+                <% } %>
+        </ol>
+    </section>
+
+        
+        <%- include ('partials/firebase.ejs' )%>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer></script>
+        
+</body>
+
+</html>
+

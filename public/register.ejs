@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <%- include ('partials/head.ejs') %>
+
+    <title>
+      <%= title %>
+    </title>
+    <link href="css/LoginForm.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <%- include ('partials/header.ejs') %>
+
+    <main class="login-form">
+      <div class="loginMethods">
+
+        <h2 class="text-center">Sign Up</h2>
+        <div class="text-center social-btn  ">
+          <button onclick="facebookCalled()" class="btn btn-primary btn-lg btn-block"><i class="fa fa-facebook"></i>
+            Sign
+            Up with <b>Facebook</b></button>
+          <button onclick="googleCalled()" class="btn btn-danger btn-lg btn-block"><i class="fa fa-google"></i>
+            Sign Up
+            with <b>Google</b></button>
+        </div>
+
+        <div class="or-seperator"><b>or</b></div>
+        <form id="signup">
+          <div class="form-group">
+            <input type="email" class="form-control" id="emailAddress" placeholder="Enter Email Id" name="email"
+              required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="passwd"
+              required pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,64}$"
+              title="Password must be of atleast 8 characters including one UpperCase alphabet, one number and one special character" />
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password"
+              name="passwd" required pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,64}$"
+              title="Password must be of atleast 8 characters including one UpperCase alphabet, one number and one special character" />
+            <div id="errorMessage"></div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block login-btn">Sign Up</button>
+          </div>
+        </form>
+        <div class="text-center"><span class="text-muted">Do have an account?</span> <a href="/login">Sign In here</a></div>
+      </div>
+    </main>
+
+    <%- include ('partials/footer.ejs' )%>
+      <%- include ('partials/firebase.ejs' )%>
+        <script src="./googleSignup.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+        <script src="js/register.js"></script>
+
+</body>
+</html>
